@@ -1,0 +1,293 @@
+/* Normalizacion */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /*Esto mantiene el ancho y alto a pesar del padding y border  */
+    font-family: "Victor Mono", monospace;
+    list-style: none;
+    /*Quita los puntos de las listas*/
+    text-decoration: none;
+    /*Quita el subrayado*/
+    color: #3d405b;
+}
+
+body {
+    background-color: #a0ced9;
+    /*TODO: Borrar cuando tenga el fondo final*/
+}
+
+header {
+    position: fixed;
+    /*Queda fijo en la parte superior*/
+    right: 0;
+    top: 0;
+    z-index: 100;
+    /*Hace qeu el header se muestre por encima*/
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.navlist {
+    display: flex;
+    /*Sirve para que los elemntos se opngan e linea*/
+}
+
+.navlist a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600px;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid #3d405b;
+}
+
+#menu-icon {
+    display: none;
+    /*porque quiero que aparezca solo cuando este colapsada la pagina*/
+    font-size: 35px;
+    z-index: 101;
+    /*para que este sobre el header*/
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon-action {
+    display: none;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, #9cedce 0%, #d4afb9 25%, #d1cfe2 75%);
+    position: relative;
+    /*para que sea relativo al contenedor*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.section {
+    padding: 0 8%;
+}
+
+.hero-text {
+    margin-left: 25%;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 800px;
+    margin-bottom: 25px;
+}
+
+.hero-text h1 {
+    font-family: 'victor mono';
+    font-style: italic;
+    font-size: 30px;
+    line-height: 50px;
+    margin: 50px 0px 50px;
+
+}
+
+.hero-img img {
+    width: 400px;
+    height: auto;
+    border: 10px solid #d4afb9;
+    border-radius: 250px;
+    margin: 10% 0 0 10%;
+    transition: all 5s linear;
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+    width: auto;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: #d4afb9;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px)
+}
+
+.hero-text a.servicios {
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.servicios i {
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute;
+    top: 40vh;
+    padding: 0 3%;
+    transform: translate(15%);
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all .5s ease;
+}
+
+.icons i:hover {
+    color: #5b747ab6;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 25px;
+    right: 3%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    color: #3d405b;
+    background-color: #5b747ab6;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width:992px) {
+    .logo {
+        font-size: 20px;
+        font-style: italic;
+    }
+   
+    section {
+        padding: 0 -50%;
+        transition: .2s;
+    }
+
+    .hero-img {
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 80%;
+        margin: 10px 0 10%;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .scroll-down {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 25px;
+        font-style: italic;
+    }
+    
+    .menu-icon-action {
+        display: block;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 100px;
+        margin-left: 50px;
+    }
+
+    .hero-img {
+        margin: 0;
+    }
+
+.navlist {
+    position: absolute;
+    top: 100%;
+    right: -200px;
+    width: 200px;
+    height: 200px;
+    background-color:#3d405bd7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    transition: all .5s ease;
+}
+
+.navlist a {
+    color: #d4afb9;
+    display: block;
+    margin: 7px 0 ;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid #d4afb9;
+}
+
+#menu-toggle:checked + label.menu-icon-action + ul {
+    right: 0;
+}
+
+}
